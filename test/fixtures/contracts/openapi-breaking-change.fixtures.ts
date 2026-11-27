@@ -965,6 +965,45 @@ export const PINNED_OPENAPI_ERROR_CODES = [
 // ---------------------------------------------------------------------------
 
 export const PINNED_OPENAPI_AUTH_REQUIREMENTS = {
+  'GET /claims/user/:wallet': { authRequired: false, scopes: [] },
+  'GET /claims/:id': { authRequired: false, scopes: [] },
+  'GET /claims/:claimId/evidence': { authRequired: false, scopes: [] },
+  'GET /claims/:claimId/evidence/latest': { authRequired: false, scopes: [] },
+  'GET /claims/evidence/:evidenceId': { authRequired: false, scopes: [] },
+  'GET /disputes/claim/:claimId': { authRequired: false, scopes: [] },
+  'GET /disputes/expired': { authRequired: false, scopes: [] },
+  'GET /disputes': { authRequired: false, scopes: [] },
+  'GET /identity/users/:id': { authRequired: false, scopes: [] },
+  'GET /identity/users/:id/sybil-score': { authRequired: false, scopes: [] },
+  'GET /identity/worldcoin/status/:userId': { authRequired: false, scopes: [] },
+  'GET /identity/worldcoin/verification/:nullifierHash': { authRequired: false, scopes: [] },
+  'GET /sybil/users/:userId/score': { authRequired: false, scopes: [] },
+  'GET /sybil/users/:userId/history': { authRequired: false, scopes: [] },
+  'GET /sybil/users/:userId/voting': { authRequired: false, scopes: [] },
+  'POST /sybil/users/:userId/verify-worldcoin': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/indexing/stats': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/chain/state': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/events/pending': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/events/confirmed': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/events/orphaned': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/events/:eventId': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/reorg/history': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/reorg/statistics': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/state/verify': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/blocks/:blockNumber/events': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/blocks/:blockNumber/canonical': { authRequired: false, scopes: [] },
+  'GET /api/v1/blockchain/config/resolution': { authRequired: false, scopes: [] },
+  'GET /indexer/status': { authRequired: false, scopes: [] },
+  'GET /rewards': { authRequired: false, scopes: [] },
+  'GET /rewards/:id': { authRequired: false, scopes: [] },
+  'GET /leaderboard': { authRequired: false, scopes: [] },
+  'GET /audit': { authRequired: false, scopes: [] },
+  'GET /audit/entity/:entityType/:entityId': { authRequired: false, scopes: [] },
+  'GET /audit/user/:userId': { authRequired: false, scopes: [] },
+  'GET /audit/action/:actionType': { authRequired: false, scopes: [] },
+  'GET /audit/changes/:entityType/:entityId': { authRequired: false, scopes: [] },
+  'GET /audit/summary': { authRequired: false, scopes: [] },
+  'GET /claims/latest': { authRequired: false, scopes: [] },
   'POST /auth/challenge': { authRequired: false, scopes: [] },
   'POST /auth/login': { authRequired: false, scopes: [] },
   'POST /auth/refresh': { authRequired: false, scopes: [] },
@@ -1015,6 +1054,7 @@ export interface OpenAPIBreakingChange {
   method?: string;
   description: string;
   version: string;
+  breakingChange?: boolean;
   migrationEvidence?: string;
 }
 
@@ -1049,6 +1089,6 @@ export const OPENAPI_CLIENT_PIN = {
   version: '7.14.0',
   language: 'typescript-fetch',
   pinnedCommit: 'a1b2c3d4e5f6g7h8i9j0',
-  specHash: 'sha256:placeholder',
+  specHash: 'sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
   generatedAt: '2026-10-15T00:00:00.000Z',
 } as const;

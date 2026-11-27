@@ -165,10 +165,7 @@ describe('Breaking / Nonbreaking Fixtures', () => {
     for (const change of OPENAPI_BREAKING_CHANGES) {
       if (change.breakingChange !== false) {
         expect(change.migrationEvidence).toBeTruthy();
-        expect(
-          change.migrationEvidence,
-          `Breaking change at ${change.path} must have migrationEvidence`,
-        ).toBeDefined();
+        expect(change.migrationEvidence).toBeDefined();
       }
     }
   });
@@ -446,10 +443,7 @@ describe('Error Code Consistency', () => {
     // The pinned OpenAPI error codes must be a superset of or equal to the canonical error codes
     // This ensures the API spec covers all canonical error codes
     for (const code of PINNED_OPENAPI_ERROR_CODES) {
-      expect(
-        typeof code,
-        `Error code ${code} must be a string`,
-      ).toBe('string');
+      expect(typeof code).toBe('string');
     }
   });
 
@@ -812,10 +806,7 @@ describe('Migration Evidence', () => {
   it('every breaking change in OPENAPI_BREAKING_CHANGES has migrationEvidence', () => {
     for (const change of OPENAPI_BREAKING_CHANGES) {
       expect(change.migrationEvidence).toBeTruthy();
-      expect(
-        change.migrationEvidence,
-        `Breaking change "${change.type}" at ${change.path} must have migrationEvidence`,
-      ).toBeDefined();
+      expect(change.migrationEvidence).toBeDefined();
     }
   });
 
